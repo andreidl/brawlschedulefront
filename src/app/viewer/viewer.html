@@ -1,0 +1,25 @@
+<div class="logs-container">
+  <h2>Logs de Batalha Coletados</h2>
+  <table *ngIf="!isLoading && !error && logs.length > 0">
+    <thead>
+      <tr>
+        <th>Data/Hora</th>
+        <th>Modo</th>
+        <th>Mapa</th>
+        <th>Resultado</th>
+        <th>Troféus</th>
+        <th>Star Player</th>
+        <th>Brawler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs">
+        <td>{{ log.battleTime | date:'short' }}</td>
+        <td>{{ log.event.mode }}</td>
+        <td>{{ log.event.map }}</td>
+        <td>{{ log.battle.result }}</td>
+        <td>{{ log.battle.trophyChange }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
